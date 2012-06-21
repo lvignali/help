@@ -4,7 +4,7 @@ title: Data types
 categories: api
 ---
 
-All the data types used in Koliseo are described here. Depending on the context where they are used some of the attributes described here may be missing.
+All the data types used in Koliseo are described here. Depending on the context some of the attributes described here may be missing.
 
 ## Primitive types
 
@@ -15,18 +15,22 @@ These are the primitive types used through the website.
 		<tr><th>Name</th><th>Description</th></tr>
 	</thead>
 	<tbody>
-		<tr><td>number</td><td>A floating point or integer number.</td></tr>
-		<tr><td>boolean</td><td>A value that may be true or false. If ommitted, it should be interpreted as false.</td></tr>
+		<tr><td>Number</td><td>A floating point or integer number.</td></tr>
+		<tr><td>boolean</td><td>A value that may be true or false.</td></tr>
 		<tr><td>String</td><td>A text value</td></tr>
-		<tr><td>Key</td><td>A String value used to identify an object inside Koliseo.</td></tr>
+		<tr><td>Key</td><td>A String value used as primary key.</td></tr>
 		<tr><td>Array</td><td>An array of values.</td></tr>
-		<tr><td>Date</td><td>A date with optional timestamp information. Date fields are serialized as two fields, one Number with milliseconds since 1970 and the other one as the ISO8601 representations, relative to the Venue timezone, if any.</td></tr>
+		<tr><td>Date</td><td>A date with optional timestamp information. Dates are serialized as two fields:
+			<ul>
+				<li>Number of milliseconds since 1970</li>
+				<li>String with the ISO8601 representation of this date</li>
+			</ul></td></tr>
 	</tbody>
 </table>
 
 ## Enumerations
 
-These are String fields that have restricted values.
+String fields with restricted values.
 
 <table>
 	<thead>
@@ -35,13 +39,23 @@ These are String fields that have restricted values.
 	<tbody>
 		<tr><td>ShowType</td><td> TRAINING, CONFERENCE, ENTERPRISE, CIRCUS, THEATER, MOVIE, SPORTS, DANCE, MUSIC, PARTY, EXHIBITION, TOURISM, OTHER </td><td class="nowrap">The Show type.</td></tr>
 		<tr><td>VenueType</td><td>CINEMA, THEATER, CONCERT_HALL, CLUB, STADIUM, MUSEUM, OTHER</td><td class="nowrap">The Venue type.</td></tr>
-		<tr><td>Currency</td><td>EUR, USD, GBP</td><td>The currencies supported by Koliseo.</td></tr>
-	</tbody>
+		<tr><td>Currency</td><td>EUR, USD, GBP</td><td class="nowrap">The list of supported currencies.</td></tr>
+	</tbody> 
 </table>
+
+## Cursors
+
+All queries that return a list of results will include a `cursor` attribute in the response object. This cursor is a String that can be provided to get the next page of results in a subsequent request.
+
+Example: 
+
+```
+GET /users/ABCD/shows?cursor=abc45ojk
+```
 
 ## FlickrImage
 
-A photo selected from Flickr.
+A photo linked from Flickr.
 
 <table>
 	<thead>
@@ -55,7 +69,7 @@ A photo selected from Flickr.
 
 ## YoutubeVideo
 
-A video selected from Youtube.
+A video linked from Youtube.
 
 <table>
 	<thead>
@@ -69,9 +83,23 @@ A video selected from Youtube.
 	</tbody>
 </table>
 
+## GeoPt
+
+A geographical location in a format that can be passed directly to Google Maps.
+
+<table>
+	<thead>
+		<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>lat </td><td>Number</td><td>The latitude</td></tr>
+		<tr><td>lng </td><td>Number</td><td>The longitude</td></tr>
+	</tbody>
+</table>
+
 ## Votes
 
-The vote results for a Show.
+The current vote results for a Show.
 
 <table>
 	<thead>
@@ -85,7 +113,7 @@ The vote results for a Show.
 
 ## Show
 
-A Show is composed of event data that are considered reusable between locations.
+Event attributes that are considered reusable between Performances.
 
 <table>
 	<thead>
@@ -99,7 +127,7 @@ A Show is composed of event data that are considered reusable between locations.
 		<tr><td>creator </td><td><a href="#user">User</a></td><td>The user that created this show</td></tr>
 		<tr><td>photos</td><td>Array of <a href="#flickrimage">FlickrImage</a></td><td>The list of selected photos</td></tr>
 		<tr><td>videos</td><td class="nowrap">Array of <a href="#youtubevideo">YoutubeVideo</a></td><td>The list of selected videos</td></tr>
-		<tr><td>votes</td><td><a href="#votes">Votes</a></td><td>The current vote values for this show</td></tr>
+		<tr><td>votes</td><td><a href="#votes">Votes</a></td><td>The current vote results for this show</td></tr>
 		<tr><td>unlisted</td><td>boolean</td><td>True if the Show is marked as unlisted</td></tr>
 		<tr><td>creationDate </td><td>Number</td><td>The creation timestamp of this show, as milliseconds since 1970.</td></tr>
 	</tbody>
@@ -107,7 +135,7 @@ A Show is composed of event data that are considered reusable between locations.
 
 ## User
 
-User data
+Attributes used to identify a User.
 
 <table>
 	<thead>
@@ -122,7 +150,7 @@ User data
 
 ## Venue
 
-Data that defines a location for a Performance. Venues can be reused by multiple Performances.
+Defines a location for a Performance. Venues can be reused by multiple Performances.
 
 <table>
 	<thead>
@@ -134,6 +162,7 @@ Data that defines a location for a Performance. Venues can be reused by multiple
 		<tr><td>type </td><td><a href="#enumerations">VenueType</a></td><td>The venue type</td></tr>
 		<tr><td>address </td><td>String</td><td>The address of this venue, as free text.</td></tr>
 		<tr><td>description</td><td>String</td><td>The description of this venue using Markdown format</td></tr>
+		<tr><td>geo </td><td><a href="#geopt">GeoPt</a></td><td>The geolocation of this venue</td></tr>
 		<tr><td>creator </td><td><a href="#user">User</a></td><td>The user that created this venue</td></tr>
 		<tr><td>currency </td><td><a href="#enumerations">Currency</a></td><td>The currency used by this venue.</td></tr>
 		<tr><td>auditoriums </td><td class="nowrap">Array of <a href="#auditorium">Auditorium</a></td><td>List of auditoriums in this venue</td></tr>
@@ -144,7 +173,7 @@ Data that defines a location for a Performance. Venues can be reused by multiple
 
 ## Auditorium
 
-A room configuration inside a Venue. This is like a Performance templates that will be used to create Performances each time that a Show is pinned down to a Venue.
+A room configuration inside a Venue. This is like a template that will be used to assign default values to new Performances created at this Venue.
 
 <table>
 	<thead>
@@ -169,14 +198,14 @@ A ticket type, like "VIP" or "standard ticket".
 		<tr><td>name </td><td>String</td><td>The zone name</td></tr>
 		<tr><td>totalTickets </td><td>Number</td><td>The number of available tickets in this Zone.</td></tr>
 		<tr><td>soldTickets </td><td>Number</td><td>The number of sold tickets for this Zone.</td></tr>
-		<tr><td>price </td><td>Number</td><td>The price to apply.</td></tr>
+		<tr><td>price </td><td>Number</td><td>The price to apply, not including the Koliseo fee.</td></tr>
 		<tr><td>fee </td><td>Number</td><td>The Koliseo fee to apply.</td></tr>
 	</tbody>
 </table>
 
 ## Performance
 
-Performances are where the action takes place. It is the result of combining a Show with a Venue (which provides location) and a timestamp. When creating, a Performancecopies the selected Auditorium structure into its own.
+Performances are where the action takes place. It is the result of combining a Show, a Venue and a timestamp.
 
 <table>
 	<thead>
@@ -191,9 +220,28 @@ Performances are where the action takes place. It is the result of combining a S
 		<tr><td>zones </td><td class="nowrap">Array of <a href="#zones">Zone</a></td><td>The different ticket prices for this Performance.</td></tr>
 		<tr><td>soldTickets </td><td>Number</td><td>The number of sold tickets for this Performance.</td></tr>
 		<tr><td>checkedinTickets </td><td>Number</td><td>The number of validated tickets for this Performance.</td></tr>
-		<tr><td>totalTickets </td><td>Number</td><td>The number of tickets for sale for this performance.</td></tr>
+		<tr><td>totalTickets </td><td>Number</td><td>The number of tickets (sold + available) for this performance.</td></tr>
 		<tr><td>currency </td><td><a href="#enumerations">Currency</a></td><td>The currency used for this performance.</td></tr>
-		<tr><td>minPrice </td><td>Number</td><td>The minimum price available in this Performance.</td></tr>
+		<tr><td>minPrice </td><td>Number</td><td>The minimum price in this Performance.</td></tr>
 	</tbody>
 </table>
 
+## Ticket
+
+A Ticket purchased by a User.
+
+<table>
+	<thead>
+		<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>id </td><td>String</td><td>The primary key</td></tr>
+		<tr><td>performance </td><td><a href="#performance">Performance</a></td><td>The performance associated to this ticket.</td></tr>
+		<tr><td>numTickets </td><td>Number</td><td>The number of tickets purchased.</td></tr>
+		<tr><td>purchaseTimestamp </td><td>String</td><td>The name of the auditorium .</td></tr>
+		<tr><td>performanceZoneName </td><td>String</td><td>The number of tickets purchased.</td></tr>
+		<tr><td>currency </td><td><a href="#enumerations">Currency</a></td><td>The currency used for this performance.</td></tr>
+		<tr><td>total </td><td>Number</td><td>The total price paid for this ticket.</td></tr>
+		<tr><td>user </td><td><a href="#user">User</a></td><td>The user that purchased this ticket</td></tr>
+	</tbody>
+</table>
