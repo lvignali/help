@@ -1,2 +1,4 @@
+mv less/koliseo/img less && mv less/koliseo/fonts less
+lessc less/style.less > less/style.css
 bundle exec guard&
 jekyll --server&

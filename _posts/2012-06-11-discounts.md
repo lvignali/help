@@ -8,7 +8,7 @@ categories: shows
 
 Every user can create discount codes that are available for events created by the same user. The discount amount has a different meaning depending on the ticket type:
 
-<p><img src="/img/discount-form.png" class="help-img"></p>
+<p><img src="/img/discount-form.png" class="img-polaroid img-rounded"></p>
 
 <table>
 	<thead>
@@ -31,4 +31,4 @@ Every user can create discount codes that are available for events created by th
 
 <p>If the discount value is greater than the ticket price, the price will be set to zero. In this case, the ticket will be handled as a free ticket and the Koliseo fee will not be applied.</p>
 
-<p><img src="/img/discount-applied.png" class="help-img"></p>
+<p><img src="/img/discount-applied.png" class="img-polaroid img-rounded"></p>
