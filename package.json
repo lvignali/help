@@ -1,0 +1,14 @@
+{
+  "name": "koliseohelp",
+  "version": "0.0.1",
+  "private": true,
+
+  "dependencies": {
+    "less": "1.3.0"
+  },
+
+  "devDependencies": {
+  },
+
+  "repository": "https://github.com/icoloma/koliseo-oss.git"
+}

@@ -1,0 +1,2 @@
+cp ../koliseo/war/less/style.css less/koliseo.css
+cp -R ../koliseo/war/less/img ../koliseo/war/less/fonts less

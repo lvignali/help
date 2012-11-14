@@ -1,4 +1,18 @@
 {
+  "build_systems":
+  [
+    {
+      "cmd":
+      [
+        "node_modules/less/bin/lessc",
+        "less/style.less",
+        "less/style.css"
+      ],
+      "name": "Lessc",
+      "selector": "source.css.less" ,
+      "working_dir": "${project_path}"
+    }
+  ],
 	"folders":
 	[
 		{
