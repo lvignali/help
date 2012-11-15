@@ -1,10 +1,33 @@
----
-layout: default
-title: Welcome
----
+<html>
+<head>
+	<meta http-equiv="refresh" content="0;url=/en">
+	<script>
+		/* http://stackoverflow.com/questions/10642737/detecting-and-applying-current-system-language-on-html-5-app-on-android */
+		var lang;
+	    if (navigator
+	            && navigator.userAgent
+	            && (lang = navigator.userAgent
+	                    .match(/android.*\W(\w\w)-(\w\w)\W/i))) {
+	        lang = lang[1];
+	    }
 
-<h2>Hi, Internet. We're here to help</h2>
+	    if (!lang && navigator) {
+	        if (navigator.language) {
+	            lang = navigator.language;
+	        } else if (navigator.browserLanguage) {
+	            lang = navigator.browserLanguage;
+	        } else if (navigator.systemLanguage) {
+	            lang = navigator.systemLanguage;
+	        } else if (navigator.userLanguage) {
+	            lang = navigator.userLanguage;
+	        }
+	        lang = lang.substr(0, 2);
+	    }
 
-<p>Koliseo is the ticketing platform oriented to events of all sizes. If you are having problems with the website, this is definitely the place to be.
-
-<p>You can search our documentation index on the right. If you find something missing, you can contact us at <a href="mailto:info@koliseo.com">info@koliseo.com</a>.
+	    location = '/' + lang;
+	</script>
+</head>
+<body>
+This page has been moved, and you should be redirected promptly. If this does not happen, click <a href="/en">here</a>.
+</body>
+</html>
