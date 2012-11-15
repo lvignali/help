@@ -14,6 +14,13 @@ sidebar_cats:
   <title>{{ page.title }} - {{ page.i18n | map: 'KoliseoHelp' }}</title>
   <link rel="stylesheet" href="/less/koliseo.css">
   <link rel="stylesheet" href="/less/style.css">
+  <script>
+    
+    if (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) {
+      document.documentElement.className += ' svg';
+    }
+
+  </script>
   <!--[if lt IE 8]><script>window.location.href='http://www.koliseo.com/browser-not-supported.html'</script><![endif]-->
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -24,7 +31,7 @@ sidebar_cats:
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container wrapper">
-          <a href="https://www.koliseo.com" class="klogo" title="{{page.i18n.LogoTitle}}">Koliseo</a>
+          <a href="http://help.koliseo.com" class="klogo" title="{{page.i18n.LogoTitle}}">Koliseo Help</a>
 
             
             <ul class="nav">
