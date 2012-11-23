@@ -486,11 +486,6 @@ textarea.span8 {
   margin: 0 5px;
   vertical-align: middle;
 }
-.fico.inline {
-  line-height: 21px;
-  /* discount-feedback en performances.js */
-
-}
 /* Ventanas modales */
 .ui-widget-overlay {
   z-index: 100;
@@ -611,11 +606,14 @@ textarea.span8 {
 .alert-message p {
   margin-bottom: 0;
 }
+/*
+Rompe interlineado de la página de soldTickets
 .alert-message div {
   margin-top: 5px;
   margin-bottom: 2px;
   line-height: 28px;
 }
+*/
 .alert-message.block-message {
   background-image: none;
   background-color: #fdf5d9;
@@ -690,96 +688,6 @@ textarea.span8 {
   position: relative;
   vertical-align: middle;
 }
-/* sesiones de un evento */
-.sessions {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-}
-.session-location-li {
-  padding: 5px 20px;
-}
-.session {
-  padding: 5px 100px 5px 20px;
-  border-top: 1px dotted #ccc;
-  position: relative;
-  cursor: pointer;
-  line-height: 29px;
-  background: #fff;
-}
-.session:first-child {
-  border-top: 0;
-}
-.session:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-.session:hover,
-.session.selected {
-  background-color: #e5e5e5;
-}
-.session.selected {
-  cursor: default;
-}
-.inverse {
-  background-color: #444740;
-  background: -moz-linear-gradient(top, #30322d 0%, #444740 10%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #30322d), color-stop(10%, #444740));
-  color: #fff;
-  -webkit-transition: 0.1s linear all;
-  -moz-transition: 0.1s linear all;
-  -ms-transition: 0.1s linear all;
-  -o-transition: 0.1s linear all;
-  transition: 0.1s linear all;
-}
-.inverse-small,
-.inverse-a,
-.inverse-a:hover {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
-}
-.inverse-small {
-  color: #aaa;
-}
-.inverse > h3,
-.inverse-a,
-.inverse-a:hover {
-  color: #fff;
-}
-.inverse-a[target=view-venue] {
-  margin-left: 10px;
-}
-.venueSelector {
-  overflow: visible !important;
-  /* chosen.js, shame on you */
-
-}
-.session-tag {
-  position: absolute;
-  top: 3px;
-  right: 5px;
-  width: 70px;
-  text-align: center;
-}
-.session-picktime .session-a {
-  font-size: 11px;
-}
-.session-time.soldout {
-  color: #888;
-  text-decoration: line-through;
-  cursor: default;
-}
-.session-select-container {
-  display: none;
-}
-.selected .session-select-container {
-  display: block;
-}
-.session-select {
-  margin-left: 0;
-  font-size: 11px;
-}
-.venue-list {
-  overflow-y: auto;
-  height: 200px;
-}
 /* -- View ticket -- */
 .summary p {
   margin-bottom: 0;
@@ -790,15 +698,6 @@ textarea.span8 {
 }
 .summary-description > hr {
   display: none;
-}
-.android-head {
-  background: transparent url(img/android-head.png) no-repeat 0 0;
-  width: 80px;
-  height: 80px;
-  float: left;
-  overflow: hidden;
-  padding-top: 80px;
-  margin-left: -15px;
 }
 .code-example {
   width: 100%;
@@ -4877,9 +4776,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-button > .fico,
-.btn > .fico {
-  font-size: 13px;
+.btn > .fico:before {
   display: inline-block;
   margin-right: 5px;
 }
@@ -4889,7 +4786,7 @@ button > .fico,
   color: @grayLight;
 }
 */
-.btn-primary > .fico {
+.btn-primary > .fico:before {
   color: #fff;
 }
 td > input[type] {
@@ -4902,7 +4799,7 @@ td > input[type] {
   -webkit-border-radius: 4px;
   -webkit-box-shadow: 0 0 6px rgba(204, 204, 204, 0.7);
 }
-.nav-tabs .fico {
+.nav-tabs .fico:before {
   line-height: 13px;
 }
 header .navbar-inner {
@@ -5197,23 +5094,7 @@ a.menu:after, .dropdown-toggle:after {
 .expanded > .expand-arrow {
   background-position: 0 -7px;
 }
-.tickets-value {
-  font-weight: bold;
-  color: #bfbfbf;
-  display: inline-block;
-  margin-right: 10px;
-  min-width: 50px;
-}
-.tickets-value.soldOut {
-  color: #c43c35;
-  text-shadow: none;
-}
-.tickets-value.scarce {
-  color: #f89406;
-}
-.tickets-value.plenty {
-  color: #46a546;
-}
+
 .nophotos, .novideos {
   float: left;
   margin-top: -15px;
@@ -5267,7 +5148,7 @@ table {
 }
 .sorted-desc,
 .sorted-asc {
-  background: gray;
+  background: #3e7337;
   color: white;
 }
 .sorted-asc  > .sort-asc {
@@ -5560,11 +5441,20 @@ ul.typeahead {
 .fs-sharebtn > .social-icon:before {
   font-size: 22px;
 }
+.fs-sharebtn > .fico:before {
+  font-size: 20px;
+}
 .fs-sharefb {
   background-color: #3b5998;
 }
 .fs-sharefb:hover {
   background-color: #4c70ba;
+}
+.fs-shareUrl {
+  background-color: #3e7337;
+}
+.fs-shareUrl:hover {
+  background-color: #519548;
 }
 .fs-sharelinks {
   position: absolute;
@@ -5656,6 +5546,29 @@ ul.typeahead {
   font-size: 24px;
   font-weight: bold;
   font-family: 'proxima_nova', Georgia, helvetica, arial, verdana, sans-serif;
+}
+.android-head {
+  background: transparent url(img/android-head.png) no-repeat 0 0;
+  width: 80px;
+  height: 80px;
+  float: left;
+  overflow: hidden;
+  padding-top: 80px;
+  margin-left: -15px;
+}
+.tickets:before {
+  font-family: Fico;
+  content: "t";
+  margin-right: 5px;
+}
+.tickets.tickets-scarce {
+  color: #9d261d;
+}
+.tickets.tickets-warning {
+  color: #f89406;
+}
+.tickets.tickets-plenty {
+  color: #519548;
 }
 .login-providers {
   margin: 0 auto 10px;
@@ -5842,6 +5755,9 @@ ul.typeahead {
     color: #ffffff;
     border-color: #ffffff;
     text-decoration: none;
+  }
+  .show-bar  > .fico:before {
+    margin: 0;
   }
   body {
     margin-top: 0;
