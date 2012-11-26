@@ -1,8 +1,7 @@
 ---
 sidebar_cats:
-- shows
+- events
 - tickets
-- api
 ---
 
 <!doctype html>
@@ -49,7 +48,7 @@ sidebar_cats:
                 </ul>
               </li>
               {% endfor %}
-              <li><a href="/{{lang}}/about">{{page.i18n.AboutUs}}</a></li>
+              <li><a href="/{{lang}}/developers">{{page.i18n.Developers}}</a></li>
             </ul>
             
         </div>
@@ -70,14 +69,17 @@ sidebar_cats:
           <ul class="pfooter-list">
             <li class="pfooter-li">
               <strong class="section-name">Koliseo</strong> 
-              <a class="pfooter-a" href="/about-us">{{ page.i18n | map: 'AboutUs' }}</a> &middot; 
+              <a class="pfooter-a" href="/{{lang}}/about">{{ page.i18n | map: 'AboutUs' }}</a> &middot; 
               <a class="pfooter-a" href="https://www.koliseo.com/legal">Legal</a> &middot; 
               <a class="pfooter-a" href="/api">API</a> &middot; 
               <a class="pfooter-a" href="/">{{ page.i18n | map: 'Help' }}</a>
             </li>
             <li class="pfooter-li">
               <strong class="section-name">{{ page.i18n | map: 'Languages' }}</strong> 
+              <!--
               <a class="pfooter-a" href="{{page.url | replace_first:lang,'es'}}">Español</a> &middot; 
+            -->
+              <a class="pfooter-a" href="/es">Español</a> &middot; 
               <a class="pfooter-a" href="{{page.url | replace_first:lang,'en'}}">English</a>
             </li>
             <li class="pfooter-li">
