@@ -40,7 +40,7 @@ sidebar_cats:
                   {{ page.i18n | map: cat }}
                 </a>
                 <ul class="dropdown-menu">
-                  {% for post in site.posts reversed %}
+                  {% for post in site.posts %}
                     {% if post.categories contains cat and post.categories contains lang %}
                       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
                     {% endif %}
