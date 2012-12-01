@@ -24,21 +24,19 @@ sidebar_cats:
 </head>
 <body>
 
-  {% assign lang = page.categories | first %}
+  {% assign lang = page.categories.first %}
   <header>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container wrapper">
-          <a href="http://help.koliseo.com" class="klogo" title="{{page.i18n.LogoTitle}}">Koliseo Help</a>
+          <a href="http://help.koliseo.com" class="klogo">Koliseo Help</a>
 
             
             <ul class="nav">
               <li><a href="/{{lang}}">{{ page.i18n | map: 'HelpSite' }}</a></li>
               {% for cat in (page.sidebar_cats) %}
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown">
-                  {{ page.i18n | map: cat }}
-                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown"> {{ page.i18n | map: cat }} </a>
                 <ul class="dropdown-menu">
                   {% for post in site.posts reversed %}
                     {% if post.categories contains cat and post.categories contains lang %}
@@ -69,10 +67,9 @@ sidebar_cats:
           <ul class="pfooter-list">
             <li class="pfooter-li">
               <strong class="section-name">Koliseo</strong> 
-              <a class="pfooter-a" href="/{{lang}}/about">{{ page.i18n | map: 'AboutUs' }}</a> &middot; 
+              <a class="pfooter-a" href="/{{lang}}">{{ page.i18n | map: 'AboutUs' }}</a> &middot; 
               <a class="pfooter-a" href="https://www.koliseo.com/legal">Legal</a> &middot; 
-              <a class="pfooter-a" href="/api">API</a> &middot; 
-              <a class="pfooter-a" href="/">{{ page.i18n | map: 'Help' }}</a>
+              <a class="pfooter-a" href="/developers">API</a> 
             </li>
             <li class="pfooter-li">
               <strong class="section-name">{{ page.i18n | map: 'Languages' }}</strong> 

@@ -1,11 +1,3 @@
-// Para estilos personalizados de la ayuda
-// Los estilos de koliseo se generan con bin/update-koliseo-styles
-.box-shadow (@shadow: 0 0 5px #444){
-	-webkit-box-shadow: @arguments;
-	-moz-box-shadow: @arguments;
-	box-shadow: @arguments;
-}
-
 .klogo {
   background-image: url(img/logo-help.png);
   width: 159px;
@@ -17,10 +9,11 @@
 .svg .klogo {
   background-image: url(img/logo-help.svg);
 }
-
 .himg {
-	.box-shadow();
-	max-width: 100%;
+  -webkit-box-shadow: 0 0 5px #444444;
+  -moz-box-shadow: 0 0 5px #444444;
+  box-shadow: 0 0 5px #444444;
+  max-width: 100%;
   margin: 10px 0;
 }
 body {
