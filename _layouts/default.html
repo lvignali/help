@@ -33,7 +33,6 @@ sidebar_cats:
 
             
             <ul class="nav">
-              <li><a href="/{{lang}}">{{ page.i18n | map: 'HelpSite' }}</a></li>
               {% for cat in (page.sidebar_cats) %}
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown"> {{ page.i18n | map: cat }} </a>
@@ -72,10 +71,7 @@ sidebar_cats:
             </li>
             <li class="pfooter-li">
               <strong class="section-name">{{ page.i18n | map: 'Languages' }}</strong> 
-              <!--
               <a class="pfooter-a" href="{{page.url | replace_first:lang,'es'}}">Español</a> &middot; 
-            -->
-              <a class="pfooter-a" href="/es">Español</a> &middot; 
               <a class="pfooter-a" href="{{page.url | replace_first:lang,'en'}}">English</a>
             </li>
             <li class="pfooter-li">
