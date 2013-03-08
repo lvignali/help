@@ -1,0 +1,26 @@
+.klogo {
+  background-image: url(img/logo-help.png);
+  width: 159px;
+  height: 33px;
+  white-space: nowrap;
+}
+/* Para cuando esto funcione con Jekyll en local
+*/
+.svg .klogo {
+  background-image: url(img/logo-help.svg);
+}
+.himg {
+  -webkit-box-shadow: 0 0 5px #444444;
+  -moz-box-shadow: 0 0 5px #444444;
+  box-shadow: 0 0 5px #444444;
+  max-width: 100%;
+  margin: 10px 0;
+}
+body {
+  padding-bottom: 170px;
+}
+code {
+  border: 1px solid #ccc;
+  padding: 3px;
+  border-radius: 3px;
+}
