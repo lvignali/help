@@ -1,3 +1,2 @@
 node_modules/less/bin/lessc less/style.less > less/style.css
-bundle exec guard&
-jekyll --server
+jekyll serve --watch
