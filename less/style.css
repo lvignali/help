@@ -15,7 +15,7 @@
   -moz-box-shadow: 0 0 5px #444444;
   box-shadow: 0 0 5px #444444;
   max-width: 100%;
-  margin: 10px 0;
+  margin: 10px 0 20px;
 }
 code {
   border: 1px solid #ccc;
@@ -28,11 +28,18 @@ html {
   min-height: 100%;
 }
 body {
-  margin-bottom: 100px;
+  margin-bottom: 110px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 100px;
+  margin-top: 20px;
+}
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ececec;
 }

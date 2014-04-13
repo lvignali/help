@@ -1,111 +1,67 @@
 ---
 layout: default_es
-title: Crear evento
+title: Crear un evento
 categories: [es, events]
 ---
 
-Es necesario contar con una página de inicio impactante para sacar lo mejor de tu evento. Para comenzar el proceso, haz click en <code>Crear Evento</code> en la barra superior de menú.
-
-<hr>
 <div class="row-fluid">
   <div class="span8">
-
-    <h2>Página Principal</h2>
-    <p>Tu primer paso es diseñar la página principal. Puedes hacer click para editar el título y la descripción (únicamente el título es obligatorio, la descripción se puede dejar en blanco). 
-    <p>Puedes seleccionar tu imagen de fondo de la lista desplegable en la esquina superior izquierda. La última opción de esta lista te permitirá especificar una foto customizada para usar como fondo. Es muy importante que únicamente utilices material sobre el que tengas derecho de uso.  
+    <p>Es necesario contar con una página de inicio impactante para sacar lo mejor de tu evento. Para comenzar el proceso, haz clic en <code>Crear Evento</code> en la barra superior de menú. Después de introducir el nombre de tu evento, puedes empezar a añadir detalles como la descripción o la imagen de fondo.
+    <p>La página del evento te indicará los pasos que faltan para que tu evento esté listo para empezar a vender.
   </div>
   <div class="span4">
-    <img class="himg" src="/img/events/create.png">
+    <a href="/img/events/create.png" target="img"><img class="himg" src="/img/events/create.png"></a>
   </div>
 </div>
 
-<hr>
-<h2>Dónde y cuándo</h2>
+<h2>Descripción del evento</h2>
+<div class="row-fluid">
+  <div class="span5">
+    <a href="/img/events/description.png" target="img"><img class="himg" src="/img/events/description.png"></a>
+  </div>
+  <div class="span7">
+    <p>Puedes introducir una descripcion de texto enriquecido seleccionando <code>Editar &raquo; Editar Descripción</code>. Aquí puedes escribir en la caja de texto de la izquierda, mientras se muestra una previsualización en tiempo real en la mitad derecha de la pantalla.
+
+    <p>Los eventos con una descripción vacía tendrán un texto por defecto que puedes modificar. Si necesitas ver la sintaxis disponible, hay un botón <code>Ayuda</code> al final de la página.
+  </div>
+</div>
+
+<h2>Fotos</h2>
 
 <div class="row-fluid">
-  <div class="span6">
-    <img class="himg" src="/img/events/where-and-when.png">
+  <div class="span7">
+    <p>Añade contexto a tu evento con una imagen de fondo impactante. Los eventos nuevos tienen asignada una imagen aleatoria del portfolio por defecto, pero puedes cambiar esto seleccionando la opción de menú <code>Editar &raquo; Editar Foto</code>, que abre el Administrador de Fotos.
+    <p>En el Administrador de Fotos puedes elegir una de las fotos disponibles por defecto o subir las tuyas propias. Cuando utilices tus propias fotos, ten en cuenta lo siguiente:
+    <ul>
+      <li><b>No todas las pantallas tienen el mismo tamaño</b>: tus usuarios utilizarán smartphones, tablets y portátiles. No esperes un tamaño específico de pantalla, dado que tu foto se ampliará o reducirá para adaptarse a la pantalla del usuario, que puede estar de pie o apaisada. 
+      <li><b>Usa una imagen en alta resolución</b>: las imágenes pequeñas tienen tendencia a mostrarse borrosas o pixeladas al ampliarse. Intenta utilizar imágenes entre 1024 y 1280 pixels de ancho, en formato 16:9. Nosotros haremos esta imagen más pequeña antes de enviarla a dispositivos pequeños (smartphones y tablets) para ahorrar ancho de banda de usuarios accediendo mediante 3G.
+      <li><b>No uses texto en tu imagen</b>: por los puntos anteriores, tu texto va a salirse de la pantalla para la mayoría de tus usuarios. Por favor, usa la descripción y los logos para esto.
+      <li><b>Utiliza sólo contenidos para los que tengas permisos</b>: ten en cuenta que eliminaremos cualquier foto que sea reportada en incumplimiento de derechos de copyright o trademark.
+    </ul>
   </div>
-  <div class="span6">
-    <p>Después de rellenar título y descripción, hay que indicar la fecha y el lugar donde se celebrará el evento. A esto lo hemos llamado <em>la actuación</em>.
-    <p>Una vez hecho click en el botón <code>Editar dónde y cuándo</code> serás redirigido a la página de detalles del evento donde podrás especificar la fecha, hora y el lugar de la actuación. Puedes probar a introducir directamente el nombre del recinto, dado que la mayoría de los recintos más conocidos son mostrados correctamente en el mapa.
-  </div>
-</div>
-
-<hr>
-<h2 id="ticket-types">Tipos de entrada y precios</h2>
-<div class="row-fluid">
-  <div class="span6">
-
-    <p>Se pueden crear tantos tipos de entrada como necesites y fijar para cada una el número disponible y el precio. 
-    <p>La comisión que aplicamos en Koliseo se calculará automáticamente cuando se introduzcan cambios en este formulario. Puedes elegir si quieres que el usuario final vea esta comisión cambiando el campo <code>Comisión pagada por</code>. Las entradas gratuitas (con precio cero) no llevan ningún tipo de comisión.
-    <p id="fee">La comisión es lo que usamos para pagar nuestras facturas. Koliseo carga una comisión del 9% (impuestos incluidos) por cada entrada no gratuita, con un mínimo de 1 EUR/USD y un máximo de 15 EUR/USD. La comisión se calcula de manera automática y no puede ser modificada. <a href="../fees">Más detalles</a>.
-  </div>
-  <div class="span6">
-    <img class="himg" src="/img/events/ticket-types.png">
+  <div class="span5">
+    <a href="/img/events/photos.png" target="img"><img class="himg" src="/img/events/photos.png"></a>
   </div>
 </div>
 
-<hr>
-<h2>Campos avanzados</h2>
+<h2>Logos</h2>
+
 <div class="row-fluid">
-  <div class="span6">
-    <img class="himg" src="/img/events/ticket-types-advanced.png">
-  </div>
-  <div class="span6">
-    <p>Hay un botón en la esquina superior derecha de la tabla de tipos de entrada que permite mostrar las fechas de disponibilidad de cada tipo de entrada. De este modo puedes especificar un precio con descuento para usuarios que adquieran su entrada antes de una determinada fecha, y un precio diferente con posterioridad. Estas fechas son opcionales, y puede dejarse cualquiera vacía.
+  <div class="span12">
+    <p>Puedes añadir logos para que se muestren al final de la página del evento. Selecciona <code>Editar &raquo; Editar Logos</code> y empieza añadiendo una categoría de logos. Puedes especificar "patrocinadores" y "organizadores", o ir con más detalle y Patrocinadores Plata, Oro y Platino. Una vez introducidas tus categorías, puedes empezar a subir los logos e introducir el nombre de compañía y URL del sitio web (opcionales).
+
+    <p>Los logos de tu evento se mostrarán al final de la página con el tamaño configurado para cada categoría. Las categorías vacías mostrarán un letrero "por confirmar".
   </div>
 </div>
-<hr>
-<h2>Descripción de tipo de entrada</h2>
-<p>Hay un enlace debajo de cada tipo de entrada para introducir una descripción. Este texto estará visible durante el proceso de compra junto con la fecha de finalización de este tipo de entrada, si se ha especificado. Los tipos de entrada que no se encuentren disponibles todavía no se mostrarán en absoluto.
-<div class="row-fluid">
-    <p><img class="himg" src="/img/events/ticket-type-description.png">
-    <p><img class="himg" src="/img/events/ticket-type-description2.png">
-</div>
-<hr>
-<h2>Empezar a vender</h2>
 <div class="row-fluid">
   <div class="span6">
-    <p>Una vez hecho click en <code>Guardar</code>, ya estás vendiendo. ¡Enhorabuena!  
-    <p>Puedes crear más actuaciones pulsando el botón <code>Añadir actuación</code>, o ir a la página de tu evento haciendo click en <code>Ver evento</code>.
+    <a href="/img/events/logos-edit.png" target="img"><img class="himg" src="/img/events/logos-edit.png"></a>
   </div>
   <div class="span6">
-    <img class="himg" src="/img/events/performances.png">
+    <a href="/img/events/logos.png" target="img"><img class="himg" src="/img/events/logos.png"></a>
   </div>
 </div>
 
-<hr>
-<h2>Parar ventas</h2>
-<div class="row-fluid">
-  <div class="span6">
-    <p>En la página del evento puede encontrarse un botón <code>Detener Ventas</code> que permite pausar la venta de entradas del evento temporalmente. Haciendo click en <code>Reanudar Ventas</code> se reanudan las ventas de la forma habitual.
-  </div>
-  <div class="span6">
-    <img class="himg" src="/img/events/stop-selling.png">
-    <img class="himg" src="/img/events/resume-selling.png">
-  </div>
-</div>
+<h2>Siguientes pasos</h2>
 
-<hr>
-<h2>Clonar actuaciones</h2>
-<div class="row-fluid">
-  <div class="span6">
-    <img class="himg" src="/img/events/clone-performance.png">
-  </div>
-  <div class="span6">
-    <p>Hay eventos que se repiten periódicamente en un intervalo de fechas (ejemplo: "lunes, miércoles y viernes a las 5; sábados a las 8"). En este caso se puede crear una actuación y usar la pestaña <code>Clonar</code> para crear múltiples copias en los días de la semana especificados. Para ello, especifica las fechas entre las que las nuevas actuaciones van a tener lugar e indica los días de la semana en los que crear dichas actuaciones. Una vez le des al botón <code>Clonar</code> se crearán actuaciones en los días indicados copiando los datos de la actuación original.
-  </div>
-</div>
-
-
-<hr>
-<h2>Tipo de evento</h2>
-<div class="row-fluid">
-  <div class="span6">
-    <img src="/img/events/data.png" class="himg">
-  </div>
-  <div class="span6">
-    Para cambiar los datos básicos de un evento puedes usar la pestaña <code>Datos</code> de la página de detalles de tu evento. En esta pestaña se puede encontrar el campo <code>Tipo de evento</code>, que permite informar a Google del tipo de evento para mejorar el SEO.
-  </div>
-</div>
+<p>Una vez has terminado de introducir los detalles de tu evento, estás listo para ir a la pestaña <a href="/es/events/dates-and-prices">Fechas y Precios</a>.
