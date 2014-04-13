@@ -1,0 +1,51 @@
+---
+layout: default_es
+title: Descuentos
+categories: [es, events]
+---
+
+<p>Puedes permitir a tus usuarios que se beneficien de descuentos sobre el precio normal de la entrada. Sólo hay que seleccionar <code>Editar &raquo; Descuentos</code>.
+
+<h2>Editar un descuento</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <p>Cada descuento debe especificar una serie de campos:
+    </p>
+    <ul>
+      <li><b>Nombre</b>: el identificador de este descuento. Los usuarios tienen que conocer este campo para usar el descuento, así que es preferible usar un nombre corto y fácil de recordar - o largo y difícil de adivinar, para cupones de un solo uso.
+      <li><b>Fecha de caducidad</b>: Es la fecha en la cual el descuento deja de estar operativo.  Puede dejarse vacío si el descuento nunca expira.
+      <li><b>Número de usos</b>: Número máximo de veces que el descuento puede utilizarse. Puede introducirse <code>1</code> para cupones de un solo uso.
+      <li><b>Importe</b>: El importe del descuento, que tiene un significado diferente dependiendo del tipo de descuento seleccionado.
+    </ul>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr><th>Tipo</th><th>Descripción</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Porcentaje</td><td>Un porcentaje que será restado del valor nominal del precio de la entrada.</td><td>"10" significa "10% sobre el valor de la entrada".</td></tr>
+        <tr><td>Fijo</td><td>Cantidad fija a descontar del importe total.</td><td>"10" significa "10€", si el evento está en euros.</td></tr>
+      </tbody>
+    </table>
+
+    <p>La comisión aplicada por Koliseo se calculará después de aplicarse el descuento. Si el descuento es superior al valor de la entrada, el precio final será cero y Koliseo no aplicará ninguna comisión.</p>
+  </div>
+  <div class="span6">
+    <img src="/img/events/discounts.png" class="himg">
+  </div>
+</div>
+
+
+<h2>Usar un descuento</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    <a href="/img/events/use-discount.png" target="img"><img src="/img/events/use-discount.png" class="himg"></a>
+  </div>
+  <div class="span6">
+    <p>Una vez el descuento está listo, accede a la página de compra haciendo clic en el botón <code>Atrás</code> y haz clic en el enlace para introducir el código descuento. Si el código es correcto, el descuento se deducirá del precio de la entrada automáticamente.</p>
+  </div>
+</div>
+
+
